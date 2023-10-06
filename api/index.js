@@ -7,7 +7,7 @@ import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import cors from 'cors';
-app.use(cors())
+
 dotenv.config();
 
 mongoose
@@ -27,7 +27,7 @@ mongoose
 const app = express();
 
 app.use(express.json());
-
+app.use(cors())
 app.use(cookieParser());
 
 app.listen(3000, () => {
