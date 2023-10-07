@@ -39,6 +39,7 @@ app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
 app.use(session({
+  
 saveUninitialized: true,
   cookie: { secure: true },
  
