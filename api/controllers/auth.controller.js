@@ -26,10 +26,10 @@ export const signin = async (req, res, next) => {
     const { password: pass, ...rest } = validUser._doc;
     res
       .cookie('access_token', token, {
-        sameSite: 'strict', // Use 'strict', 'lax', or 'none' as needed
+        sameSite: 'none', // Use 'strict', 'lax', or 'none' as needed
         secure: true, // Set to true if your application uses HTTPS
         httpOnly: true, // Prevent JavaScript access to the cookie
-       maxAge: 3600000, /
+       
       })
       .status(200)
       .json(rest);
