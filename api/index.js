@@ -38,16 +38,7 @@ app.listen(3000, () => {
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
-app.use(session({
-  resave: false,
-  secret: "Shh, its a secret!",
-saveUninitialized: true,
-domain:"https://real-estate-nemg.onrender.com",
-    sameSite: 'none',
-  secure: true,
-  httpOnly: true
- 
-}));
+
 
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
