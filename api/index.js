@@ -42,7 +42,10 @@ app.use(session({
   resave: false,
   secret: "Shh, its a secret!",
 saveUninitialized: true,
-  cookie: { secure: true },
+
+    sameSite: 'none',
+  secure: true,
+  httpOnly: true
  
 }));
 
