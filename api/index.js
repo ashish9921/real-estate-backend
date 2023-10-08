@@ -42,7 +42,7 @@ app.use(session({
   resave: false,
   secret: "Shh, its a secret!",
 saveUninitialized: true,
-
+domain:"https://real-estate-nemg.onrender.com",
     sameSite: 'none',
   secure: true,
   httpOnly: true
