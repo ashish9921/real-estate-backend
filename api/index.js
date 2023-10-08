@@ -7,7 +7,7 @@ import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import cors from 'cors';
-// import session from 'express-session';
+import session from 'express-session';
 
 dotenv.config();
 
@@ -38,13 +38,13 @@ app.listen(3000, () => {
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
-// app.use(session({
-//   resave: false,
-//   secret: "Shh, its a secret!",
-// saveUninitialized: true,
-//   cookie: { secure: true },
+app.use(session({
+  resave: false,
+  secret: "Shh, its a secret!",
+saveUninitialized: true,
+  cookie: { secure: true },
  
-// }));
+}));
 
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
