@@ -29,6 +29,7 @@ export const signin = async (req, res, next) => {
         sameSite: 'none', // Use 'strict', 'lax', or 'none' as needed
         secure: true, // Set to true if your application uses HTTPS
         httpOnly: true, // Prevent JavaScript access to the cookie
+        maxAge:3600000,
        
       })
       .status(200)
