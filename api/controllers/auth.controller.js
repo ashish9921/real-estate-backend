@@ -30,6 +30,7 @@ export const signin = async (req, res, next) => {
         secure: true, // Set to true if your application uses HTTPS
         httpOnly: true, // Prevent JavaScript access to the cookie
         maxAge:3600000,
+        domain: 'https://real-estate-nemg.onrender.com,
        
       })
       .status(200)
