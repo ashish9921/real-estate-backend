@@ -27,9 +27,9 @@ export const signin = async (req, res, next) => {
     res
       .cookie('access_token', token, {
         sameSite: 'lax', // Use 'strict', 'lax', or 'none' as needed
-        secure: true, // Set to true if your application uses HTTPS
-        httpOnly: true, // Prevent JavaScript access to the cookie
-        maxAge:3600000,
+        secure: false, // Set to true if your application uses HTTPS
+        httpOnly: false, // Prevent JavaScript access to the cookie
+        maxAge:60*60*24*7,
         domain: 'https://real-estate-nemg.onrender.com',
        
       })
