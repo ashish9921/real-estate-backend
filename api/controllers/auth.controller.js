@@ -30,7 +30,7 @@ export const signin = async (req, res, next) => {
         secure: false, // Set to true if your application uses HTTPS
         httpOnly: false, // Prevent JavaScript access to the cookie
         maxAge:60*60*24*7,
-        domain: 'https://real-estate-nemg.onrender.com',
+        domain: 'https://6527cda29bc2622e11894432--megaestate.netlify.app/',
        
       })
       .status(200)
