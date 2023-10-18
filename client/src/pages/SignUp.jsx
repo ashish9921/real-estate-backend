@@ -18,7 +18,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios('https://real-estate-nemg.onrender.com/api/auth/signup', {
+      const res = await axios('/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
