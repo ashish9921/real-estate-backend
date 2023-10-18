@@ -26,11 +26,10 @@ export const signin = async (req, res, next) => {
     const { password: pass, ...rest } = validUser._doc;
     res
       .cookie('access_token', token, {
-        sameSite: 'lax', // Use 'strict', 'lax', or 'none' as needed
-        secure: false, // Set to true if your application uses HTTPS
-        httpOnly: false, // Prevent JavaScript access to the cookie
-        maxAge:60*60*24*7,
-        domain: 'https://6527cda29bc2622e11894432--megaestate.netlify.app/',
+      
+        
+        httpOnly: true, // Prevent JavaScript access to the cookie
+     
        
       })
       .status(200)
@@ -48,11 +47,9 @@ export const google = async (req, res, next) => {
       const { password: pass, ...rest } = user._doc;
       res
         .cookie('access_token', token, {
-          sameSite: 'lax', // Use 'strict', 'lax', or 'none' as needed
-        secure: true, // Set to true if your application uses HTTPS
+    
         httpOnly: true, // Prevent JavaScript access to the cookie
-        maxAge:3600000,
-        domain: 'https://real-estate-nemg.onrender.com',})
+      })
         .status(200)
         .json(rest);
     } else {
@@ -72,11 +69,10 @@ export const google = async (req, res, next) => {
       const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
       const { password: pass, ...rest } = newUser._doc;
       res
-        .cookie('access_token', token, {  sameSite: 'lax', // Use 'strict', 'lax', or 'none' as needed
-        secure: true, // Set to true if your application uses HTTPS
-        httpOnly: true, // Prevent JavaScript access to the cookie
-        maxAge:3600000,
-        domain: 'https://real-estate-nemg.onrender.com',})
+        .cookie('access_token', token, {  // Use 'strict', 'lax', or 'none' as needed
+        
+        httpOnly: true, // Prevent JavaScript access to the cooki
+        })
         .status(200)
         .json(rest);
     }
